@@ -1,11 +1,13 @@
 import "./App.css";
 import { useState } from "react";
-import UserDataForm from "./components/UserDataForm";
+import Profile from "./components/Profile";
 import EducationList from "./components/EducationList";
 import EducationForm from "./components/EducationForm";
-import Profile from "./components/Profile";
 import EmploymentHistory from "./components/EmploymentHistory";
 import EmploymentForm from "./components/EmploymentForm";
+import Navigation from "./components/Navigation";
+import ProfileAccordion from "./components/ProfileAccordion";
+
 
 function App() {
   //Profile data
@@ -41,7 +43,7 @@ function App() {
   // Delete employment
   const deleteEmployments = (id) => {
     setEmployments(employments.filter((employment) => employment.id !== id));
-    console.log('delet employmnt', id)
+    console.log("delet employmnt", id);
   };
 
   // Add Employment
@@ -54,7 +56,11 @@ function App() {
 
   return (
     <>
-      <UserDataForm handleChange={handleChange} userData={userData} />
+    <div className="h-screen	 dark:bg-gray-800">
+        <div className="container h-screen	 dark:bg-gray-800">
+          
+      <Navigation />
+      <ProfileAccordion userData={userData} handleChange={handleChange}/>
       <Profile userData={userData} />
 
       <EducationForm
@@ -84,6 +90,8 @@ function App() {
       ) : (
         "No Employment records"
       )}
+      </div>
+      </div>
     </>
   );
 }

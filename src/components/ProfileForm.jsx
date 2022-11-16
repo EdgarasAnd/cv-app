@@ -1,4 +1,4 @@
-function UserDataForm(props) {
+function ProfileForm(props) {
   return (
     <>
       <form>
@@ -61,4 +61,4 @@ function UserDataForm(props) {
   );
 }
 
-export default UserDataForm;
+export default ProfileForm;
