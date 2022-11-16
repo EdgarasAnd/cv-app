@@ -1,19 +1,22 @@
 import Employment from "./Employment";
+import { Timeline } from "flowbite-react";
 
 function EmploymentHistory({ employments, deleteEmployments }) {
   return (
     <>
       {employments.map((employment) => {
         return (
-          <Employment
-            deleteEmployments={deleteEmployments}
-            key={employment.id}
-            employment={employment}
-          />
+          <Timeline>
+            <Employment
+              deleteEmployments={deleteEmployments}
+              key={employment.id}
+              employment={employment}
+            />
+          </Timeline>
         );
       })}
     </>
   );
 }
 
-export default EmploymentHistory
+export default EmploymentHistory;
