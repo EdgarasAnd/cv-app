@@ -9,9 +9,12 @@ import ProfileAccordion from "./components/ProfileAccordion";
 
 function App() {
   //Profile data
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState(
+    { firstName: "FirstName", lastName: "LastName", age: "2022-11-12", email: "your@email.com" },
+  );
   // Employments
-  const [employments, setEmployments] = useState([]);
+  const [employments, setEmployments] = useState([]
+    );
   // Educations
   const [educations, setEducations] = useState([]);
 
@@ -54,10 +57,10 @@ function App() {
 
   return (
     <>
-      <div className="h-screen	 dark:bg-gray-800">
+      <div className="h-screen p-5 dark:bg-gray-800">
         <div className="container h-screen	 dark:bg-gray-800">
           <Navigation />
-          <ProfileAccordion userData={userData} handleChange={handleChange} />
+          <ProfileAccordion className="" userData={userData} handleChange={handleChange} />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
@@ -74,7 +77,9 @@ function App() {
                   educations={educations}
                 />
               ) : (
-                <div className="m-4">No Education records</div>
+                <div className="m-4 dark:text-gray-100">
+                  No Education records
+                </div>
               )}
               <EducationForm
                 handleEducationAdd={handleEducationAdd}
@@ -82,7 +87,7 @@ function App() {
               />
             </div>
             <div>
-            <h3 className="my-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+              <h3 className="my-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                   Your Job History
                 </span>{" "}
@@ -94,7 +99,7 @@ function App() {
                   employments={employments}
                 />
               ) : (
-                <div className="m-4">No Job records</div>
+                <div className="m-4 dark:text-gray-100">No Job records</div>
               )}
               <EmploymentForm
                 handleEmploymentAdd={handleEmploymentAdd}

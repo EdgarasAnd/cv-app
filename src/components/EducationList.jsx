@@ -4,8 +4,6 @@ import Education from "./Education";
 function EducationList({ educations, deleteEducation }) {
   return (
     <>
-      
-
       {educations.map((education) => {
         return (
           <Timeline>

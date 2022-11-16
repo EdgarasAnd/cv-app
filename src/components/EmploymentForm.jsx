@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Button, Label, Modal, Textarea, TextInput } from "flowbite-react";
 
 export default function EmploymentForm({ handleEmploymentAdd }) {
-  const [jobTitle, setJobTitle] = useState("");
-  const [employer, setEmployer] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [jobCity, setJobCity] = useState("");
-  const [description, setDescription] = useState("");
+  const [jobTitle, setJobTitle] = useState("Programer");
+  const [employer, setEmployer] = useState("Google");
+  const [startDate, setStartDate] = useState("2022-02-03");
+  const [endDate, setEndDate] = useState("2022-02-03");
+  const [jobCity, setJobCity] = useState("London");
+  const [description, setDescription] = useState("Nice job");
   const [showModal, setShowModal] = useState(false);
 
   const onSubmitEmpl = (event) => {
@@ -21,6 +21,7 @@ export default function EmploymentForm({ handleEmploymentAdd }) {
       jobCity,
       description,
     });
+    setShowModal(false)
 
     setJobCity("");
     setStartDate("");

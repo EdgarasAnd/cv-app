@@ -13,7 +13,7 @@ export default function EducationForm({ handleEducationAdd }) {
     e.preventDefault();
 
     handleEducationAdd({ school, degree, date, city, description });
-
+    setShowModal(false)
     setCity("");
     setDate("");
     setDegree("");
@@ -116,6 +116,7 @@ export default function EducationForm({ handleEducationAdd }) {
 
                 <div className=" ">
                   <Button className="w-full"
+                  
                     type="submit"
                     outline={false}
                     gradientDuoTone="greenToBlue">
