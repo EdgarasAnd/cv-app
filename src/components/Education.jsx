@@ -40,7 +40,6 @@ export default function Education({ education, deleteEducation }) {
             {education.degree} degree in {education.city} city.
           </Timeline.Title>
           <Timeline.Body>{education.description}</Timeline.Body>
-          <Button color="gray">Edit</Button>
         </Timeline.Content>
       </Timeline.Item>
     </>

@@ -1,8 +1,12 @@
-import { Button, Timeline } from "flowbite-react";
-
+import { Timeline, Dropdown } from "flowbite-react";
+import EmploymentEditForm from "./EmploymentEditForm";
 import React from "react";
 
-export default function Employment({ employment, deleteEmployments }) {
+export default function Employment({
+  employment,
+  deleteEmployments,
+  handleEmploymentEdit,
+}) {
   return (
     <>
       <Timeline.Item className="mb-0 py-2">
@@ -23,25 +27,37 @@ export default function Employment({ employment, deleteEmployments }) {
             </svg>
           </div>
           <div>
-            <button
-              onClick={() => deleteEmployments(employment.id)}
-              type="button"
-              class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-small rounded-full text-sm px-2 py-0 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
-              x
-            </button>
+            <div className="flex justify-end px-4 pt-4">
+              <Dropdown
+                inline={true}
+                label="Edit"
+                className="">
+                <Dropdown.Item>
+                  <EmploymentEditForm />
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <p
+                    onClick={() => deleteEmployments(employment.id)}
+                    className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Delete
+                  </p>
+                </Dropdown.Item>
+              </Dropdown>
+            </div>
           </div>
         </div>
 
         <Timeline.Content>
           <Timeline.Time>
-            <strong>Start date:</strong> {employment.startDate}<br></br> <strong>End date:</strong> {employment.endDate}
+            <strong>Start date:</strong> {employment.startDate}
+            <br></br> <strong>End date:</strong> {employment.endDate}
           </Timeline.Time>
           <Timeline.Title>
             I worked with <strong>{employment.employer}</strong> as{" "}
-            <strong>{employment.jobTitle}</strong> in <strong>{employment.jobCity}</strong> city.
+            <strong>{employment.jobTitle}</strong> in{" "}
+            <strong>{employment.jobCity}</strong> city.
           </Timeline.Title>
           <Timeline.Body>{employment.description}</Timeline.Body>
-          <Button color="gray">Edit</Button>
         </Timeline.Content>
       </Timeline.Item>
     </>

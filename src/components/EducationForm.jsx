@@ -13,7 +13,7 @@ export default function EducationForm({ handleEducationAdd }) {
     e.preventDefault();
 
     handleEducationAdd({ school, degree, date, city, description });
-    setShowModal(false)
+    setShowModal(false);
     setCity("");
     setDate("");
     setDegree("");
@@ -41,7 +41,7 @@ export default function EducationForm({ handleEducationAdd }) {
             <Modal.Body>
               <form onSubmit={onSubmit}>
                 <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8">
-                  <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+                  <h3 className="text-4xl font-medium text-gray-900 dark:text-white">
                     Add you Education
                   </h3>
                   <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -100,7 +100,6 @@ export default function EducationForm({ handleEducationAdd }) {
                     </div>
                   </div>
                   <div>
-                    
                     <Label value="Description" />
                   </div>
                   <Textarea
@@ -112,11 +111,9 @@ export default function EducationForm({ handleEducationAdd }) {
                     required={false}
                     rows={4}
                   />
-                </div>
 
-                <div className=" ">
-                  <Button className="w-full"
-                  
+                  <Button
+                    className="w-full"
                     type="submit"
                     outline={false}
                     gradientDuoTone="greenToBlue">

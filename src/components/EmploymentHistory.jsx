@@ -1,4 +1,6 @@
 import Employment from "./Employment";
+import EmploymentEditForm from "./EmploymentEditForm";
+
 import { Timeline } from "flowbite-react";
 
 function EmploymentHistory({ employments, deleteEmployments }) {
@@ -7,11 +9,14 @@ function EmploymentHistory({ employments, deleteEmployments }) {
       {employments.map((employment) => {
         return (
           <Timeline>
+          
             <Employment
               deleteEmployments={deleteEmployments}
               key={employment.id}
               employment={employment}
-            />
+            >              
+            </Employment>
+            
           </Timeline>
         );
       })}

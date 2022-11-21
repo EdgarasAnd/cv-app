@@ -28,11 +28,6 @@ function App() {
     });
   };
 
-  // Delete education
-  const deleteEducation = (id) => {
-    setEducations(educations.filter((education) => education.id !== id));
-  };
-
   // Add Education
   const handleEducationAdd = (education) => {
     const id = Math.floor(Math.random() * 1000) + 1;
@@ -41,10 +36,9 @@ function App() {
     console.log("add", newEducation);
   };
 
-  // Delete employment
-  const deleteEmployments = (id) => {
-    setEmployments(employments.filter((employment) => employment.id !== id));
-    console.log("delet employmnt", id);
+  // Delete education
+  const deleteEducation = (id) => {
+    setEducations(educations.filter((education) => education.id !== id));
   };
 
   // Add Employment
@@ -55,6 +49,16 @@ function App() {
     console.log("add employment", newEmployment);
   };
 
+  // Delete employment
+  const deleteEmployments = (id) => {
+    setEmployments(employments.filter((employment) => employment.id !== id));
+    console.log("delet employmnt", id);
+  };
+
+  // Update Employment
+  const handleEmploymentEdit = (id, updateEmployment) => {
+    setEmployments(employments.map((employment) => employment.id === id ? updateEmployment : employment))
+  }
   return (
     <>
       <div className="h-screen p-5 dark:bg-gray-800">
@@ -103,6 +107,7 @@ function App() {
               )}
               <EmploymentForm
                 handleEmploymentAdd={handleEmploymentAdd}
+                handleEmploymentEdit={handleEmploymentEdit}
                 employments={employments}
               />
             </div>
