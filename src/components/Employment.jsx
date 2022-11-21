@@ -5,11 +5,11 @@ import React from "react";
 export default function Employment({
   employment,
   deleteEmployments,
-  handleEmploymentEdit,
+  
 }) {
   return (
     <>
-      <Timeline.Item className="mb-0 py-2">
+      <Timeline.Item className="time-line-item py-5">
         <Timeline.Point />
         <div className="flex justify-between">
           <div>
@@ -27,11 +27,11 @@ export default function Employment({
             </svg>
           </div>
           <div>
-            <div className="flex justify-end px-4 pt-4">
+            <div className="flex justify-end px-4 pt-4 dark:text-white">
               <Dropdown
                 inline={true}
-                label="Edit"
-                className="">
+                label="Change"
+                className="dark:text-white">
                 <Dropdown.Item>
                   <EmploymentEditForm />
                 </Dropdown.Item>

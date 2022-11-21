@@ -52,7 +52,7 @@ export default function EmploymentForm({ handleEmploymentEdit, id, employment })
               <form onSubmit={onSubmitEmpl}>
                 <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8">
                   <h3 className="text-4xl font-medium text-gray-900 dark:text-white">
-                    Edit this Job
+                    Edit this Education Item
                   </h3>
                   <div className="grid gap-6 mb-6 md:grid-cols-2">
                     <div>

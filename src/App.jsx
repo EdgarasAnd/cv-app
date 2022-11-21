@@ -68,7 +68,7 @@ function App() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
-              <h3 className="my-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+              <h3 className="mb-5 pb-5 my-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                   Your Education
                 </span>{" "}
@@ -91,13 +91,14 @@ function App() {
               />
             </div>
             <div>
-              <h3 className="my-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+              <h3 className="my-4 mb-5 pb-5 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                   Your Job History
                 </span>{" "}
               </h3>
               {employments.length > 0 ? (
                 <EmploymentHistory
+                
                   deleteEmployments={deleteEmployments}
                   handleEmploymentAdd={handleEmploymentAdd}
                   employments={employments}

@@ -1,10 +1,11 @@
-import { Button, Timeline } from "flowbite-react";
+import { Button, Timeline, Dropdown } from "flowbite-react";
 import React from "react";
+import EducationEditForm from "./EducationEditForm"
 
 export default function Education({ education, deleteEducation }) {
   return (
     <>
-      <Timeline.Item className="mb-0 py-2">
+      <Timeline.Item className="time-line-item mb-0 py-5">
         <Timeline.Point />
         <div className="flex justify-between">
           <div>
@@ -24,12 +25,23 @@ export default function Education({ education, deleteEducation }) {
             </svg>
           </div>
           <div>
-            <button
-              onClick={() => deleteEducation(education.id)}
-              type="button"
-              class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-small rounded-full text-sm px-2 py-0 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
-              x
-            </button>
+            <div className="flex justify-end px-4 pt-4 dark:text-white">
+              <Dropdown
+                inline={true}
+                label="Change"
+                className="dark:text-white">
+                <Dropdown.Item>
+                  <EducationEditForm />
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <p
+                    onClick={() => deleteEducation(education.id)}
+                    className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Delete
+                  </p>
+                </Dropdown.Item>
+              </Dropdown>
+            </div>
           </div>
         </div>
 
