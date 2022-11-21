@@ -38,7 +38,7 @@ export default function Employment({
                 <Dropdown.Item>
                   <p
                     onClick={() => deleteEmployments(employment.id)}
-                    className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
+                    className="block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:text-red-600 dark:hover:bg-gray-600 dark:hover:text-red-500">
                     Delete
                   </p>
                 </Dropdown.Item>

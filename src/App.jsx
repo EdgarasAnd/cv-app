@@ -61,8 +61,8 @@ function App() {
   }
   return (
     <>
-      <div className="h-screen p-5 dark:bg-gray-800">
-        <div className="container h-screen	 dark:bg-gray-800">
+      <div className="h-screen p-5  dark:bg-gradient-to-r from-slate-900 to-slate-700">
+        <div className="container">
           <Navigation />
           <ProfileAccordion className="" userData={userData} handleChange={handleChange} />
 
