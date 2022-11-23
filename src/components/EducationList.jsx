@@ -6,7 +6,7 @@ function EducationList({ educations, deleteEducation }) {
     <>
       {educations.map((education) => {
         return (
-          <Timeline>
+          <Timeline key={education.id}>
             <Education
               deleteEducation={deleteEducation}
               key={education.id}

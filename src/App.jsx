@@ -42,22 +42,22 @@ function App() {
   };
 
   // Add Employment
-  const handleEmploymentAdd = (employment) => {
+  const handleEmploymentAdd = (theJob) => {
     const id = Math.floor(Math.random() * 1000) + 2;
-    const newEmployment = { id, ...employment };
+    const newEmployment = { id, ...theJob };
     setEmployments([...employments, newEmployment]);
-    console.log("add employment", newEmployment);
+    console.log("handleEmploymentAdd", newEmployment, id);
   };
 
   // Delete employment
   const deleteEmployments = (id) => {
-    setEmployments(employments.filter((employment) => employment.id !== id));
-    console.log("delet employmnt", id);
+    setEmployments(employments.filter((theJob) => theJob.id !== id));
+    console.log("delete employment", id);
   };
 
   // Update Employment
   const handleEmploymentEdit = (id, updateEmployment) => {
-    setEmployments(employments.map((employment) => employment.id === id ? updateEmployment : employment))
+    setEmployments(employments.map((theJob) => theJob.id === id ? updateEmployment : theJob))
   }
   return (
     <>

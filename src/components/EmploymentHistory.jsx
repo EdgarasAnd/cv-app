@@ -1,20 +1,21 @@
-import Employment from "./Employment";
+import TheJob from "./TheJob";
 
 import { Timeline } from "flowbite-react";
 
 function EmploymentHistory({ employments, deleteEmployments }) {
+
   return (
     <>
-      {employments.map((employment) => {
+      {employments.map((theJob) => {
         return (
-          <Timeline>
+          <Timeline key={theJob.id}>
           
-            <Employment
+            <TheJob
               deleteEmployments={deleteEmployments}
-              key={employment.id}
-              employment={employment}
+              
+              theJob={theJob} 
             >              
-            </Employment>
+            </TheJob>
             
           </Timeline>
         );
