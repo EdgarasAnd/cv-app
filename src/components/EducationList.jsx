@@ -9,7 +9,6 @@ function EducationList({ educations, deleteEducation }) {
           <Timeline key={education.id}>
             <Education
               deleteEducation={deleteEducation}
-              key={education.id}
               education={education}
             />
           </Timeline>
